@@ -1,3 +1,5 @@
+# This is the blueprint, class definition file for Coin Toss. py
+
 import random
 
 # The Coin class simulates a coin that can
@@ -7,8 +9,11 @@ class Coin:
     # The _ _init_ _ method initializes the
     # sideup data attribute with 'Heads'.
 
+    # adding the .__sideup attribute now hides it from being manipulated
+    # in the Coin Toss.py program file
+    # that edit also needs to be update to each method below
     def __init__(self):
-        self.sideup = 'Heads'
+        self.__sideup = 'Heads'
 
     # The toss method generates a random number
     # in the range of 0 through 1. If the number
@@ -17,12 +22,12 @@ class Coin:
 
     def toss(self):
         if random.randint(0, 1) == 0:
-            self.sideup = 'Heads'
+            self.__sideup = 'Heads'
         else:
-            self.sideup = 'Tails'
+            self.__sideup = 'Tails'
 
     # The get_sideup method returns the value
     # referenced by sideup.
 
     def get_sideup(self):
-            return self.sideup
+            return self.__sideup
