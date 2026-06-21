@@ -39,20 +39,20 @@ customer = fc.Customer(
 
 # Processing the transactions
 order_total = 0                         #Reseting total cost to store matching transactions
-customer_transactions = []
+customer_transactions = []              #Create an empty list to store matching transactions
 
 
 
 
-#Start looping process for each dictionary item
+#Start looping process for each dictionary item in transaction
 for trans_id, data in dict.items():
     #Creating transaction object using a list
     transaction = fc.Transaction(data[0], data[1], data[2], data[3])
 
-    # Matching transaction customer id with customer id 
+    # Matching class transaction customer id with class customer id 
     if transaction.get_customerid() == customer.get_customerid():
         #Saving matching transactions in a list
-        customer_transactions.append(transaction)
+        customer_transactions.append(transaction)           #appending all matching transactions
         order_total += transaction.get_cost()               #Adding all matching transactions for total costs
 
 
